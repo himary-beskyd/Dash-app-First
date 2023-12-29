@@ -2,7 +2,11 @@ import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SOLAR])
+app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SOLAR], eta_tags=[{'name': 'viewport',
+'content': 'width=device-width, initial-scale=1.0'}])
+
+server=app.server
+
 sidebar = dbc.Nav(
             [
                 dbc.NavLink(
